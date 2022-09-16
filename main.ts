@@ -11,7 +11,7 @@ const player = (e: any) => {
     game = game.filter(e => e!== num)
     setTimeout(() => {
         return ia(game)
-    }, 1000);
+    }, 500);
 }
 
 
