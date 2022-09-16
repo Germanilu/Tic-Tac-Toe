@@ -1,0 +1,23 @@
+
+h1{
+    margin: 2em auto;
+    text-align: center;
+}
+
+section {
+    width: 50%;
+    height: 30em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+
+}
+
+.firstRow, .secondRow{
+    border-bottom: 0.5em solid black;
+}
+
+.firstColumn, .secondColumn{
+    border-right: 0.5em solid black;
+}
