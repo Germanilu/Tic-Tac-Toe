@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 h1{
     margin: 2em auto;
     text-align: center;
@@ -21,3 +23,46 @@ section {
 .firstColumn, .secondColumn{
     border-right: 0.5em solid black;
 }
+
+.cross {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.cross:after {
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\2A2F"; 
+    font-size: 200px; 
+    color: rgb(170, 53, 53);
+    line-height: 100px;
+    text-align: center;
+}
+
+.circle {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.circle:after {
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\25CB"; 
+    font-size: 250px; 
+    color: rgb(170, 53, 53);
+    line-height: 100px;
+    text-align: center;
+}
+ 
+
+ 
