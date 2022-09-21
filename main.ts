@@ -42,7 +42,7 @@ const player = (e: any) => {
     //Checking if we have a winner...
     setTimeout(() => {
         winner ? console.log("Game end") : iaDecision(game);
-    }, 500);
+    }, 200);
 };
 
 
@@ -75,18 +75,37 @@ const checkWinner = (arrPick: number[], winnerName: string) => {
     //Map arrWinner and check if arrPick include all the number to complete 1 winner combination if yes, declare a winner
     arrWinner.forEach(i => {
         if (i.every(e => arrPick.includes(e))) {
-            console.log(winnerName, "WIN");
+
             //Map the winner array and connect each value of the array to the corresponding HTML Element
             i.forEach(e => {
                 let winnerCombinationBox :HTMLElement | null = varArray[e - 1]
                 //Add new style to the element
-                winnerCombinationBox?.classList.add("winnerBg")
+                winnerCombinationBox?.classList.add("winnerGameBg")
             })
+            winnerBox(winnerName)
             return winner = true;
         }
     });
 };
 
+//Create new Box on DOM with info winner
+const winnerBox = (winnerName:string) => {
+    let newDiv: HTMLDivElement = document.createElement("div");
+    newDiv.classList.add("winnerMessage")
+    let newContent:Text = document.createTextNode(`${winnerName} Win!`);
+    newDiv.appendChild(newContent)
+    let gameSection: HTMLElement | null = document.getElementById("game");
+    document.body.insertBefore(newDiv, gameSection)
+
+    setTimeout(() => {
+        reset()
+    }, 3300);
+}
+
+//Reset Game
+const reset =() => {
+    window.location.reload();
+}
 
 //Event Listener
 first?.addEventListener('click', player);

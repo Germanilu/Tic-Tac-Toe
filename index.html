@@ -11,7 +11,7 @@
 
 <body>
     <h1>Tic Tac Toe</h1>
-    <section>
+    <section id="game">
         <div id="1" class="gridBox firstRow firstColumn" data-value="1"></div>
         <div id="2" class="gridBox firstRow secondColumn" data-value="2"></div>
         <div id="3" class="gridBox firstRow" data-value="3"></div>
@@ -22,6 +22,7 @@
         <div id="8" class="gridBox secondColumn" data-value="8"></div>
         <div id="9" class="gridBox" data-value="9"></div>
     </section>
+    <button onclick="reset()">Reset Game</button>
     <script src="build/main.js"></script>
 </body>
 

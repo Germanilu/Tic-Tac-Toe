@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 *{
     box-sizing: border-box;
+    font-family: 'Bangers', cursive;
+    
+}
+body{
+    background-color: #14bdac;
 }
 h1{
     margin: 2em auto;
@@ -13,15 +20,14 @@ section {
     display: grid;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(3,auto);
-
 }
 
 .firstRow, .secondRow{
-    border-bottom: 0.5em solid black;
+    border-bottom: 0.5em solid rgba(0, 0, 0, 0.493);
 }
 
 .firstColumn, .secondColumn{
-    border-right: 0.5em solid black;
+    border-right: 0.5em solid rgba(0, 0, 0, 0.493);
 }
 
 .cross {
@@ -64,6 +70,20 @@ section {
     text-align: center;
 }
  
-.winnerBg{
+.winnerGameBg{
     background-color: rgba(206, 203, 44, 0.356);
+}
+
+.winnerMessage{
+    width: 20em;
+    height: 5em;
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    margin-left: 8em;
 }

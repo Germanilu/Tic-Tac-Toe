@@ -38,7 +38,7 @@ const player = (e) => {
     //Checking if we have a winner...
     setTimeout(() => {
         winner ? console.log("Game end") : iaDecision(game);
-    }, 500);
+    }, 200);
 };
 //IA Game
 const iaDecision = (arr) => {
@@ -68,16 +68,32 @@ const checkWinner = (arrPick, winnerName) => {
     //Map arrWinner and check if arrPick include all the number to complete 1 winner combination if yes, declare a winner
     arrWinner.forEach(i => {
         if (i.every(e => arrPick.includes(e))) {
-            console.log(winnerName, "WIN");
             //Map the winner array and connect each value of the array to the corresponding HTML Element
             i.forEach(e => {
                 let winnerCombinationBox = varArray[e - 1];
                 //Add new style to the element
-                winnerCombinationBox === null || winnerCombinationBox === void 0 ? void 0 : winnerCombinationBox.classList.add("winnerBg");
+                winnerCombinationBox === null || winnerCombinationBox === void 0 ? void 0 : winnerCombinationBox.classList.add("winnerGameBg");
             });
+            winnerBox(winnerName);
             return winner = true;
         }
     });
+};
+//Create new Box on DOM with info winner
+const winnerBox = (winnerName) => {
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("winnerMessage");
+    let newContent = document.createTextNode(`${winnerName} Win!`);
+    newDiv.appendChild(newContent);
+    let gameSection = document.getElementById("game");
+    document.body.insertBefore(newDiv, gameSection);
+    setTimeout(() => {
+        reset();
+    }, 3300);
+};
+//Reset Game
+const reset = () => {
+    window.location.reload();
 };
 //Event Listener
 first === null || first === void 0 ? void 0 : first.addEventListener('click', player);
