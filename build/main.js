@@ -69,6 +69,12 @@ const checkWinner = (arrPick, winnerName) => {
     arrWinner.forEach(i => {
         if (i.every(e => arrPick.includes(e))) {
             console.log(winnerName, "WIN");
+            //Map the winner array and connect each value of the array to the corresponding HTML Element
+            i.forEach(e => {
+                let winnerCombinationBox = varArray[e - 1];
+                //Add new style to the element
+                winnerCombinationBox === null || winnerCombinationBox === void 0 ? void 0 : winnerCombinationBox.classList.add("winnerBg");
+            });
             return winner = true;
         }
     });

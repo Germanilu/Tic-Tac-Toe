@@ -70,13 +70,18 @@ const iaDecision = (arr: number[]) => {
     winner ? console.log("Game end") : console.log("User need to pick");
 }
 
-
 //Function to check if we have a winner...
 const checkWinner = (arrPick: number[], winnerName: string) => {
     //Map arrWinner and check if arrPick include all the number to complete 1 winner combination if yes, declare a winner
     arrWinner.forEach(i => {
         if (i.every(e => arrPick.includes(e))) {
             console.log(winnerName, "WIN");
+            //Map the winner array and connect each value of the array to the corresponding HTML Element
+            i.forEach(e => {
+                let winnerCombinationBox :HTMLElement | null = varArray[e - 1]
+                //Add new style to the element
+                winnerCombinationBox?.classList.add("winnerBg")
+            })
             return winner = true;
         }
     });

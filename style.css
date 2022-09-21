@@ -64,5 +64,6 @@ section {
     text-align: center;
 }
  
-
- 
+.winnerBg{
+    background-color: rgba(206, 203, 44, 0.356);
+}
